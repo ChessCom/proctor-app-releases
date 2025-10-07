@@ -1,0 +1,6 @@
+{
+  "./**/*.{js,mjs,ts}": [
+    "yarn run lint:f",
+    "yarn run format:f"
+  ]
+}

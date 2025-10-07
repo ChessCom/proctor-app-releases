@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "quoteProps": "preserve",
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": ["package.json"],
+      "options": { "tabWidth": 2 }
+    }
+  ]
+}

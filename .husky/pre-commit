@@ -1,0 +1,1 @@
+lint-staged -c .lintstagedrc --continue-on-error --hide-unstaged

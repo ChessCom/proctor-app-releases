@@ -1,0 +1,23 @@
+name: publish
+on:
+  push:
+    branches:
+      - prod
+      - staging
+      - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish container image
+    uses: ChessCom/reusable-workflows/.github/workflows/reusable-docker-build-push.yml@docker-build-push/v2
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      image_name: ${{ github.repository }}
+      branch_env_map: '{"prod": "prod", "staging": "staging", "master": "staging"}'
+      multistage_target: production
+      checkout_submodules: true
+    secrets:
+      submodules_read_token: ${{ secrets.GH_READ_SUBMODULE  }}
